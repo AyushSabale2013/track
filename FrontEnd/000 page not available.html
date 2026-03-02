@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access Denied</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #f44336, #e57373);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .access-denied-box {
+      background-color: #fff;
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .access-denied-box h1 {
+      font-size: 28px;
+      color: #d32f2f;
+      margin-bottom: 10px;
+    }
+
+    .access-denied-box p {
+      font-size: 16px;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .access-denied-box .note {
+      font-size: 14px;
+      color: #888;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="access-denied-box">
+    <h1>🚫 Page Access Not Available</h1>
+    <p>You do not have permission to view this page.</p>
+    <p class="note">Still working on it...</p>
+  </div>
+
+</body>
+</html>
