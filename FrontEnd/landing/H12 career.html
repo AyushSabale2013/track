@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/H12 career.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+
+
+
+    <section class="job-form-section">
+        <h2>Join <span class="highlight">Track Academy</span></h2>
+        <p class="subtitle">Apply for Teaching or Non-Teaching Positions</p>
+
+        <form class="job-form" action="/submit-job-form" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fullName">Full Name*</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number*</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jobType">Job Category*</label>
+                <select id="jobType" name="jobType" required>
+                    <option value="">-- Select --</option>
+                    <option value="Teaching">Teaching Staff</option>
+                    <option value="Non-Teaching">Non-Teaching Staff</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="post">Post Applied For*</label>
+                <input type="text" id="post" name="post" placeholder="e.g. Physics Faculty, Office Admin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="resume">Upload Resume (PDF / DOC)*</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Cover Letter / Message (Optional)</label>
+                <textarea id="message" name="message" rows="4"
+                    placeholder="Tell us why you’re a great fit..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+    </section>
+
+
+
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* main-content area */
+
+.why_track {
+    background: #f9f9ff;
+    padding: 100px 100px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+}
+
+#why_track_heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    /* Bold title */
+    color: #2c3e50;
+    margin-bottom: 50px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+#why_track_heading:hover {
+    transform: translateX(5px) scale(1.20);
+    color: rgb(63, 56, 17);
+}
+
+/* #why_track_heading::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #6e8efb;
+  margin: 10px auto 0;
+  border-radius: 2px;
+} */
+
+.why_us_idea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    padding: 0 20px;
+}
+
+.why_us_points {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a237e;
+    margin: 0;
+}
+
+.why_us_explains {
+    font-size: 15px;
+    color: #333;
+    margin: 0 0 10px;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+}
+
+.why_us_explains:hover {
+    transform: translateX(5px);
+    color: #6e8efb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* registration button */
+.register_button_section {
+    height: 70px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fancy-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(31, 31, 58);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    overflow: hidden;
+}
+
+.fancy-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-25deg);
+    transition: left 0.5s;
+}
+
+.fancy-btn:hover::before {
+    left: 130%;
+}
+
+.fancy-btn:hover {
+    transform: translateY(-3px) scale(1.18);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+

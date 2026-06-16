@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubtSession</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/S03 doubt.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+
+
+    <!-- timetable -->
+    <div class="body-background">
+        <div class="doubt-container">
+            <h1>💬 Doubt Sessions - Track Academy</h1>
+
+            <!-- Ask Question Section -->
+            <div class="ask-box">
+                <h2>Ask Your Doubt</h2>
+                <label for="subject">Select Subject:</label>
+                <select id="subject">
+                    <option value="">--Choose--</option>
+                    <option value="JEE">Physics</option>
+                    <option value="NEET">Chemistry</option>
+                    <option value="CET">Mathematics</option>
+                    <option value="NDA">Biology</option>
+                </select>
+
+                <label for="question">Type Your Question:</label>
+                <textarea id="question" placeholder="Write your question here..."></textarea>
+
+                <button onclick="submitQuestion()">Submit</button>
+
+                <p id="statusMessage"></p>
+            </div>
+
+            <!-- Quick Support Box -->
+            <div class="support-box">
+                <h2>🚀 Quick Support</h2>
+                <p>Need help quickly? Reach out to our support team via <strong>live chat</strong> or call us at
+                    <strong>+91-9876543210</strong>. We're here to assist you 24x7!
+                </p>
+            </div>
+            <label for="question">Find Quick Support</label>
+            <textarea id="question" placeholder="Write your query..."></textarea>
+
+            <button onclick="submitQuestion()">Submit</button>
+
+        </div>
+    </div>
+
+
+
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+</body>
+</html>

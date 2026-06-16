@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance - Track Academy</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/T06 performance.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+
+
+    <div class="body-background">
+        <div class="container">
+            <h1> Student Performance Panel - Track Academy (Teacher View)</h1>
+
+            <!-- Filter Options -->
+            <div class="filters">
+                <label>Section:
+                    <select>
+                        <option>JEE</option>
+                        <option>NEET</option>
+                        <option>NDA</option>
+                        <option>CET</option>
+                    </select>
+                </label>
+                <label>Batch:
+                    <select>
+                        <option>JEE Alpha</option>
+                        <option>NEET Morning</option>
+                        <option>NDA 2025</option>
+                        <option>CET FastTrack</option>
+                    </select>
+                </label>
+                <label>Name:
+                    <input type="text" placeholder="Enter student name">
+                </label>
+                <label>Roll No:
+                    <input type="text" placeholder="Enter roll number">
+                </label>
+            </div>
+
+            <!-- Marks Table -->
+            <div class="card">
+                <h2>Test Results</h2>
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Test</th>
+                        <th>Physics</th>
+                        <th>Chemistry</th>
+                        <th>Maths</th>
+                        <th>Total</th>
+                        <th>Out of</th>
+                    </tr>
+                    <tr>
+                        <td><input value="01 July 2025" /></td>
+                        <td><input value="Test 1" /></td>
+                        <td><input value="88" /></td>
+                        <td><input value="91" /></td>
+                        <td><input value="82" /></td>
+                        <td><input placeholder="Auto/Manual" /></td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td><input value="08 July 2025" /></td>
+                        <td><input value="Test 2" /></td>
+                        <td><input value="72" /></td>
+                        <td><input value="89" /></td>
+                        <td><input value="85" /></td>
+                        <td><input placeholder="Auto/Manual" /></td>
+                        <td>300</td>
+                    </tr>
+                </table>
+                <button class="submit-btn">Submit Marks</button>
+            </div>
+
+            <!-- Attendance Table -->
+            <div class="card">
+                <h2>Attendance</h2>
+                <table>
+                    <tr>
+                        <th>Week</th>
+                        <th>Days Present</th>
+                        <th>Total Days</th>
+                        <th>Attendance %</th>
+                    </tr>
+                    <tr>
+                        <td><input value="01-07 July" /></td>
+                        <td><input value="5" /></td>
+                        <td><input value="6" /></td>
+                        <td><input placeholder="Auto/Manual" /></td>
+                    </tr>
+                    <tr>
+                        <td><input value="08-14 July" /></td>
+                        <td><input value="6" /></td>
+                        <td><input value="6" /></td>
+                        <td><input placeholder="Auto/Manual" /></td>
+                    </tr>
+                </table>
+                <button class="submit-btn">Submit Attendance</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+</body>
+
+</html>

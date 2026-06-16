@@ -1,0 +1,170 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.body-background{
+   background-image: 
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+  background-blend-mode: overlay;
+  background-size: contain;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+.teacher-dashboard-section {
+    max-width: 1200px;
+    margin: auto;
+    /* background: #fff; */
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.teacher-dashboard-section h1 {
+    font-size: 32px;
+    color: #1c3f60;
+    margin-bottom: 30px;
+}
+
+.dashboard-grid {
+    
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+
+}
+
+.dashboard-card {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #f8fbfd;
+    border-left: 8px solid #ccc;
+    padding: 22px 20px 22px 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: left;
+    min-height: 200px;
+    min-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+}
+
+.dashboard-card h3 {
+    font-size: 20px;
+    color: #1c3f60;
+    margin-bottom: 12px;
+}
+
+.dashboard-card p {
+    color: #444;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+.dashboard-card a {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #1a73e8;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-card a:hover {
+    background-color: #0d5cc3;
+    transform: translateX(5px) scale(1.01);
+}
+
+/* Colorful pastel sidebars & hover effects */
+.dashboard-card:nth-child(1) {
+    border-left-color: rgba(142, 68, 173, 0.7);
+    /* Purple */
+    background-color: rgba(250, 246, 255, 0.5);
+
+}
+
+.dashboard-card:nth-child(1):hover {
+    background-color: rgba(142, 68, 173, 0.1);
+    transform: translateX(5px) scale(1.01);
+}
+
+.dashboard-card:nth-child(2) {
+    border-left-color: rgba(231, 76, 60, 0.7);
+    /* Red */
+    background-color: rgba(255, 245, 245, 0.5);
+}
+
+.dashboard-card:nth-child(2):hover {
+    background-color: rgba(231, 76, 60, 0.1);
+    transform: translateX(5px) scale(1.01);
+}
+
+.dashboard-card:nth-child(3) {
+    border-left-color: rgba(39, 174, 96, 0.7);
+    /* Green */
+    background-color: rgba(244, 255, 247, 0.5);
+}
+
+.dashboard-card:nth-child(3):hover {
+    background-color: rgba(39, 174, 96, 0.1);
+    transform: translateX(5px) scale(1.01);
+}
+
+.dashboard-card:nth-child(4) {
+    border-left-color: rgba(243, 156, 18, 0.7);
+    /* Orange */
+    background-color: rgba(255, 250, 242, 0.5);
+}
+
+.dashboard-card:nth-child(4):hover {
+    background-color: rgba(243, 156, 18, 0.1);
+    transform: translateX(5px) scale(1.01);
+}
+
+.dashboard-card:nth-child(5) {
+    border-left-color: rgba(163, 153, 6, 0.7);
+    /* Blue */
+    background-color: rgba(240, 248, 255, 0.5);
+}
+
+.dashboard-card:nth-child(5):hover {
+    background-color: rgba(137, 133, 7, 0.1);
+    transform: translateX(5px) scale(1.01);
+}
+

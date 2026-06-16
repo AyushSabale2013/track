@@ -1,0 +1,202 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+/* body-background */
+
+.body-background{
+   background-image: 
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+  background-blend-mode: overlay;
+  background-size: contain;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+/* study material */
+
+
+
+
+
+/* Live Lecture Container */
+.live-lecture-container {
+  max-width: 1000px;
+  /* margin: 30px auto; */
+  margin-left: 13%;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main Heading */
+.live-lecture-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* Section Headings */
+.section h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+  font-size: 24px;
+
+  border-left: 6px solid #2980b9;
+  padding-left: 12px;
+}
+#section-h2{
+  margin-left: 20%;
+}
+
+/* Class Cards */
+.class-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.class-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.class-card h3 {
+  margin-top: 0;
+  color: #000000;
+  font-size: 20px;
+}
+
+.class-card p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 15px;
+}
+
+.live {
+  border-left: 6px solid #e74c3c;
+  background-color: #fff4f4;
+}
+
+.upcoming {
+  border-left: 6px solid #7ba0e0;
+   background: #f8fbfd;
+}
+
+
+
+/* Join/Start Button */
+.join-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: #27ae60;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.join-btn:hover {
+  background: #1e8449;
+}
+
+/* Host Class Form */
+.host-form form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.host-form form label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+.host-form form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.host-form form input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.host-form form button {
+  padding: 10px 18px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: fit-content;
+}
+
+.host-form form button:hover {
+  background-color: #21618c;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  .live-lecture-container {
+    padding: 20px 15px;
+  }
+
+  .host-form form {
+    width: 100%;
+  }
+
+  .class-card {
+    padding: 18px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .class-card h3 {
+    font-size: 18px;
+  }
+}
+

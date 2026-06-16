@@ -1,0 +1,196 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* body-background */
+
+.body-background{
+   background-image: 
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+  background-blend-mode: overlay;
+  background-size: contain;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+
+
+
+/* DASHBOARD SECTION */
+
+/* Enrolled Course Two-Column Layout */
+.enrolled-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 30px auto;
+  padding: 25px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  max-width: 1200px;
+}
+
+.enrolled-image img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.enrolled-image img:hover {
+  transform: scale(1.02);
+}
+
+.enrolled-info {
+  flex: 1;
+  min-width: 250px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.enrolled-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #1c3f60;
+}
+
+.enrolled-info p {
+  margin: 10px 0;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #0077cc;
+  color: white;
+  border-radius: 6px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005fa3;
+}
+
+
+/* Extra Courses - Horizontal Cards */
+.course-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 30px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  scroll-snap-type: x mandatory;
+}
+
+.extra-courses h2{
+     font-size: 24px;
+  margin-left: 20px;
+  color: #1c3f60;
+
+}
+.course-card-large {
+  flex: 0 0 350px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 5px solid #0077cc;
+}
+
+.course-card-large:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.course-card-large h3 {
+  font-size: 22px;
+  color: #1c3f60;
+  margin-bottom: 12px;
+}
+
+.course-card-large p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.course-card-large a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0077cc;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.course-card-large a:hover {
+  text-decoration: underline;
+}
+
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .enrolled-layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .enrolled-image img {
+    max-width: 100%;
+  }
+
+  .course-row {
+    flex-direction: column;
+    overflow-x: unset;
+    padding: 20px;
+  }
+
+  .course-card-large {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoubtSession</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/T03 doubt.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+
+    <!-- doubt section -->
+
+    <div class="body-background">
+        <div class="doubt-container">
+            <h1> Doubt Session Panel - Teacher View </h1>
+
+            <div class="ask-box">
+                <h2>📝 Student Doubt Queue - Physics</h2>
+
+                <!-- Doubt 1 -->
+                <div class="question-item">
+                    <p><strong>Student:</strong> Ankit Sharma</p>
+                    <p><strong>Question:</strong> Can you explain the concept of Gauss’s Law in Electrostatics?</p>
+                    <span class="status pending">Pending</span>
+
+                    <label for="answer1">Your Answer:</label>
+                    <textarea id="answer1" placeholder="Type your answer here..."></textarea>
+                    <button onclick="submitAnswer('answer1')">Submit Answer</button>
+                </div>
+
+                <!-- Doubt 2 -->
+                <div class="question-item">
+                    <p><strong>Student:</strong> Neha Verma</p>
+                    <p><strong>Question:</strong> Why does acceleration decrease when a rocket ascends?</p>
+                    <span class="status pending">Pending</span>
+
+                    <label for="answer2">Your Answer:</label>
+                    <textarea id="answer2" placeholder="Type your answer here..."></textarea>
+                    <button onclick="submitAnswer('answer2')">Submit Answer</button>
+                </div>
+
+                <!-- Doubt 3 -->
+                <div class="question-item">
+                    <p><strong>Student:</strong> Rohit Kale</p>
+                    <p><strong>Question:</strong> Is there any shortcut for vector addition problems?</p>
+                    <span class="status irrelevant">Irrelevant</span>
+
+                    <label for="answer3">Your Answer:</label>
+                    <textarea id="answer3" placeholder="Type your answer here..."></textarea>
+                    <button onclick="submitAnswer('answer3')">Submit Answer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+</body>
+
+</html>

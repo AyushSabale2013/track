@@ -1,0 +1,153 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body-background */
+
+.body-background{
+   background-image: 
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+  background-blend-mode: overlay;
+  background-size: contain;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+/* study material */
+
+
+
+
+
+
+  .live-lecture-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .live-lecture-container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+
+  .class-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .class-card:hover {
+    transform: scale(1.01);
+  }
+
+  .class-card h3 {
+    margin-top: 0;
+    color: #2980b9;
+  }
+
+  .class-card p {
+    margin: 6px 0;
+    color: #333;
+  }
+
+  .join-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  .join-btn:hover {
+    background: #1e8449;
+  }
+
+  .live {
+    border-left: 6px solid #e74c3c;
+    background-color: #fff9f9;
+  }
+
+  .upcoming {
+    border-left: 6px solid #3498db;
+    background-color: #f8fbff;
+  }
+
+

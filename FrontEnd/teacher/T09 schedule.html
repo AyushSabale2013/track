@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/T09 schedule.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+
+
+    <!-- timetable -->
+
+    <div class="body-background">
+        <div class="schedule-container">
+            <h1> Subject Timetable - Teacher Panel (Track Academy)</h1>
+
+            <!-- Today's Schedule -->
+            <section class="today-schedule">
+                <h2>Today's Schedule - 19 July 2025</h2>
+
+                <div class="lecture-card">
+                    <h3>⏰ 9:00 AM - 10:30 AM</h3>
+                    <p><strong>Section:</strong> JEE</p>
+                    <p><strong>Subject:</strong> Physics</p>
+                    <p><strong>Topic:</strong> Current Electricity</p>
+                </div>
+
+                <div class="lecture-card">
+                    <h3>⏰ 11:00 AM - 12:30 PM</h3>
+                    <p><strong>Section:</strong> NEET</p>
+                    <p><strong>Subject:</strong> Physics</p>
+                    <p><strong>Topic:</strong> Laws of Motion</p>
+                </div>
+
+                <div class="lecture-card">
+                    <h3>⏰ 2:00 PM - 3:30 PM</h3>
+                    <p><strong>Section:</strong> CET</p>
+                    <p><strong>Subject:</strong> Physics</p>
+                    <p><strong>Topic:</strong> Work, Energy & Power</p>
+                </div>
+
+                <div class="lecture-card">
+                    <h3>⏰ 4:00 PM - 5:30 PM</h3>
+                    <p><strong>Section:</strong> NDA</p>
+                    <p><strong>Subject:</strong> Physics</p>
+                    <p><strong>Topic:</strong> Thermodynamics</p>
+                </div>
+            </section>
+
+            <!-- Editable Weekly Schedule -->
+            <section class="weekly-schedule">
+                <h2>Edit Weekly Topics - Physics</h2>
+                <form class="weekly-form">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>JEE</th>
+                                <th>NEET</th>
+                                <th>CET</th>
+                                <th>NDA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td><input type="text" value="Electrostatics"></td>
+                                <td><input type="text" value="Motion in 1D"></td>
+                                <td><input type="text" value="Units & Measurements"></td>
+                                <td><input type="text" value="Kinematics"></td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td><input type="text" value="Current Electricity"></td>
+                                <td><input type="text" value="Work Energy Power"></td>
+                                <td><input type="text" value="Motion in Plane"></td>
+                                <td><input type="text" value="Laws of Motion"></td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td><input type="text" value="Capacitance"></td>
+                                <td><input type="text" value="Oscillations"></td>
+                                <td><input type="text" value="Force & Friction"></td>
+                                <td><input type="text" value="Rotational Motion"></td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td><input type="text" value="Magnetism"></td>
+                                <td><input type="text" value="Thermodynamics"></td>
+                                <td><input type="text" value="Gravitation"></td>
+                                <td><input type="text" value="Fluid Mechanics"></td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td><input type="text" value="Waves"></td>
+                                <td><input type="text" value="Simple Harmonic Motion"></td>
+                                <td><input type="text" value="Pressure & Buoyancy"></td>
+                                <td><input type="text" value="Heat Transfer"></td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td><input type="text" value="Revision / Test"></td>
+                                <td><input type="text" value="Practice MCQs"></td>
+                                <td><input type="text" value="Mock Test"></td>
+                                <td><input type="text" value="Revision"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="submit-container">
+                        <button type="submit"> Submit Weekly Plan</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+</body>
+
+</html>

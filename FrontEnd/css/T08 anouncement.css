@@ -1,0 +1,129 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+/* body background */
+
+.body-background {
+    background-image:
+        url("https://www.transparenttextures.com/patterns/cubes.png"),
+        linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+    background-blend-mode: overlay;
+    background-size: contain;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+
+.announcement-wrapper {
+  max-width: 900px;
+  /* margin: 40px auto; */
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.make-announcement,
+.previous-announcements {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.make-announcement h2,
+.previous-announcements h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #fdfdfd;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.previous-announcements .announcement-item {
+  background: #f9f9f9;
+  border-left: 4px solid #3498db;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.previous-announcements .announcement-item:hover {
+  transform: translateY(-3px);
+  background: #f0f8ff;
+}
+
+.announcement-item strong {
+  display: block;
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.announcement-item span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}

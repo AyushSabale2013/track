@@ -1,0 +1,181 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+/* body-background */
+
+.body-background{
+   background-image: 
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+  background-blend-mode: overlay;
+  background-size: contain;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+/* doubts */
+
+ /* Overall Container */
+.doubt-container {
+  max-width: 950px;
+  margin-left: 18%;
+  margin-right: 18%;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  /* background: #f9f9fb; */
+}
+
+/* Page Title */
+.doubt-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+/* Box Holding Questions */
+.ask-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Section Heading */
+.ask-box h2 {
+  color: rgb(107, 96, 35);
+  font-size: 24px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Individual Question Card */
+.question-item {
+  background-color: #f8fbff;
+  border-left: 6px solid rgb(107, 96, 35);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 25px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.question-item:hover {
+  box-shadow: 0 8px 18px rgba(107, 96, 35, 0.5);
+}
+
+/* Student Name and Question Text */
+.question-item p {
+  margin: 5px 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+/* Status Tag */
+.status {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.status.pending {
+  background-color: #f39c12;
+}
+
+.status.solved {
+  background-color: #27ae60;
+}
+
+.status.irrelevant {
+  background-color: #e74c3c;
+}
+
+/* Label for Answer */
+.question-item label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Answer Textarea */
+.question-item textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  resize: vertical;
+  transition: border 0.3s ease;
+}
+
+.question-item textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+/* Submit Button */
+.question-item button {
+  background-color: #2c7be5;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.question-item button:hover {
+  background-color: #1b5fc0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .doubt-container {
+    padding: 15px;
+  }
+
+  .question-item {
+    padding: 15px;
+  }
+
+  .status {
+    font-size: 12px;
+    padding: 4px 10px;
+    top: 12px;
+    right: 15px;
+  }
+}
+

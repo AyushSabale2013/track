@@ -1,0 +1,134 @@
+
+/* Hero Section */
+.hero_section_1 {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+.hero_section_2 {
+    /* margin-top: 50px; */
+    margin-bottom: 0%;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body-background */
+
+.body-background{
+   background-image: 
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+  background-blend-mode: overlay;
+  background-size: contain;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+/* study material */
+
+.study-material-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.study-material-section h1 {
+  font-size: 36px;
+  color: #1c3f60;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.study-material-section h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #0077cc;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  animation: fadeIn 1s ease-in;
+}
+
+.material-card {
+  background-color: #f9fbfd;
+  border-left: 6px solid;
+  border-image: linear-gradient(to bottom, #0077cc, #00bcd4) 1;
+  border-radius: 16px;
+  padding: 25px 20px 20px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.material-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Add light background variations */
+.material-card:nth-child(1) { background-color: #f0f9ff; }
+.material-card:nth-child(2) { background-color: #fef9f5; }
+.material-card:nth-child(3) { background-color: #f4fef7; }
+.material-card:nth-child(4) { background-color: #fff9f9; }
+.material-card:nth-child(5) { background-color: #f7f5fe; }
+
+.material-card h3 {
+  color: #1c3f60;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.material-card p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.material-card a {
+  display: inline-block;
+  margin-top: 18px;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.material-card a:hover {
+  text-decoration: underline;
+  color: #005999;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+

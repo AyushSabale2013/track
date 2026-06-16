@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/S06 performance.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+
+
+
+
+    <div class="body-background">
+        <div class="container">
+            <h1>Student Performance - Track Academy</h1>
+
+            <!-- Graph Card -->
+            <div class="card">
+                <h2>Performance Improvement Graph</h2>
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <!-- Marks Table -->
+            <div class="card">
+                <h2>Test Results - JEE Preparation</h2>
+                <table>
+                    <tr>
+                        <th>Week</th>
+                        <th>Test No.</th>
+                        <th>Physics</th>
+                        <th>Chemistry</th>
+                        <th>Maths</th>
+                        <th>Total</th>
+                        <th>Out of</th>
+                    </tr>
+                    <tr>
+                        <td>01 July 2025</td>
+                        <td>Weekly Test 1</td>
+                        <td>88</td>
+                        <td>91</td>
+                        <td>82</td>
+                        <td>261</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>08 July 2025</td>
+                        <td>Weekly Test 2</td>
+                        <td>72</td>
+                        <td>89</td>
+                        <td>0</td>
+                        <td>245</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>15 July 2025</td>
+                        <td>Weekly Test 3</td>
+                        <td>81</td>
+                        <td>28</td>
+                        <td>79</td>
+                        <td></td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>22 July 2025</td>
+                        <td>Weekly Test 4</td>
+                        <td>78</td>
+                        <td>83</td>
+                        <td>85</td>
+                        <td>246</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>29 July 2025</td>
+                        <td>Weekly Test 5</td>
+                        <td>85</td>
+                        <td>90</td>
+                        <td>86</td>
+                        <td>261</td>
+                        <td>300</td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- Attendance Table -->
+            <div class="card">
+                <h2>Weekly Attendance</h2>
+                <table>
+                    <tr>
+                        <th>Week</th>
+                        <th>Days Present</th>
+                        <th>Total Days</th>
+                        <th>Attendance %</th>
+                    </tr>
+                    <tr>
+                        <td>01 - 07 July</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>83%</td>
+                    </tr>
+                    <tr>
+                        <td>08 - 14 July</td>
+                        <td>6</td>
+                        <td>6</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>15 - 19 July</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>80%</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Feedback Section -->
+            <div class="card">
+                <h2>Feedback & Suggestions</h2>
+                <div class="feedback">
+                    The student has shown noticeable improvement in both performance and consistency.
+                    The rank has improved significantly over the past 3 tests. Focus more on Physics numerical problems.
+                    Maintain current attendance streak and continue solving practice papers. Keep up the good work!
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+    <script src="../js/S06 performance.js"></script>
+</body>
+
+</html>
