@@ -74,14 +74,12 @@ form.addEventListener("submit", async (e) => {
 
         // ── Login Success ─────────────────────
 
-        alert("Login successful");
-
 
         switch (data.role) {
 
             case "admin":
                 window.location.href =
-                    "../admin/home.html";
+                    "../admin/A01 home.html";
                 break;
 
             case "teacher":
@@ -91,7 +89,7 @@ form.addEventListener("submit", async (e) => {
 
             case "student":
                 window.location.href =
-                    "../student/home.html";
+                    "../student/S01 home.html";
                 break;
 
             default:

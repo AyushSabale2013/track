@@ -98,7 +98,7 @@ form.addEventListener("submit", async (e) => {
         }
 
         // ── Success ──────────────────────────────────────────────
-        alert("Registration successful! Please log in.");
+        // alert("Registration successful! Please log in.");
         window.location.href = "../auth/A01 student login.html";
 
     } catch (error) {
