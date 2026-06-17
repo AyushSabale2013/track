@@ -7,8 +7,17 @@ import authRoutes from "./routes/authRoutes.js";
 const app = express();
 
 
+
+
 // middlewares
-app.use(cors()); // Search more about cors when revisit this 
+app.use(cors({
+    origin: [
+        "http://localhost:5500",
+        "http://127.0.0.1:5500"
+    ],
+    credentials: true
+})); // search more about cors when u revisit it 
+
 app.use(express.json());
 app.use(cookieParser());
 

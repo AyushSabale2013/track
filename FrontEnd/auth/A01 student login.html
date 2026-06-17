@@ -22,10 +22,10 @@
     <div class="student-body">
         <div class="login-container">
             <div class="login-header">
-                <img src="../assets/ images/H01 Track logo.png" alt="Academy Logo" class="academy-logo">
+                <img src="../assets/images/navLogo.png" alt="Academy Logo" class="academy-logo">
                 <h2>Student Login</h2>
             </div>
-            <form class="login-form">
+            <form id="loginForm" class="login-form">
                 <div class="input-group">
                     <label for="username">Roll Number or Email</label>
                     <input type="text" id="username" name="username" placeholder="Enter your Roll No. or Email"
@@ -39,8 +39,9 @@
                     <input type="checkbox" id="remember" name="remember">
                     <label for="remember">Remember Me</label>
                 </div>
-                <button type="submit" class="login-button"><a href="/S01 index.html"
-                        class="change_anchor_decoration_white">Login</a> </button>
+                <button type="submit" class="login-button">
+                    Login
+                </button>
                 <div class="links">
                     <a href="../landing/000 page not available.html">Forgot Password?</a>
                     <span>|</span>
@@ -52,9 +53,10 @@
 
 
 
-    
+
     <div id="footer"></div>
     <script src="../js/loadComponents.js"></script>
+    <script src="../js/auth.js"></script>
 </body>
 
 </html>
