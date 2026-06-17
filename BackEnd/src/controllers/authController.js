@@ -6,9 +6,7 @@ const registerUser = async (req, res) => {
     try {
         const { name, email, phone, password } = req.body;
 
-        const existingUser = await User.findOne({
-            $or: [{ email }, { phone }]
-        });
+        const existingUser = await User.findOne({ email });
 
         if (existingUser) {
             return res.status(400).json({
@@ -79,7 +77,7 @@ const login = async (req, res) => {
         res.status(200).json({
             success: true,
             message: "Login successful",
-            role : user.role
+            role: user.role
         });
 
     } catch (error) {
