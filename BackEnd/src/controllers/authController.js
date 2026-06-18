@@ -72,6 +72,8 @@ const login = async (req, res) => {
         res.cookie("token", token, {
             httpOnly: true, // This helps against XSS attacks , only server can read cookies
             maxAge: 7 * 24 * 60 * 60 * 1000,
+            sameSite: "lax",
+            secure: false
         });
 
         res.status(200).json({
