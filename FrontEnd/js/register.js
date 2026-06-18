@@ -5,31 +5,55 @@
 
 // ── 1. Grab elements from the DOM ─────────────────────────────
 
-const form            = document.getElementById("registerForm");
-const passwordInput   = document.getElementById("password");
-const confirmInput    = document.getElementById("confirmPassword");
-const togglePwBtn     = document.getElementById("togglePw");
+const form             = document.getElementById("registerForm");
+const passwordInput    = document.getElementById("password");
+const confirmInput     = document.getElementById("confirmPassword");
+const togglePwBtn      = document.getElementById("togglePw");
 const toggleConfirmBtn = document.getElementById("toggleConfirmPw");
 
+// Popup elements
+const popupOverlay = document.getElementById("popup");
+const popupMessage = document.getElementById("popup-message");
+const popupIcon    = document.getElementById("popup-icon");
+const popupClose   = document.getElementById("popup-close");
 
-// ── 2. Password visibility toggles ────────────────────────────
+
+// ── 2. Popup helper ────────────────────────────────────────────
+//    Use this everywhere instead of alert().
+//    type: "error" | "success"
+//    onClose: optional callback to run after user clicks OK
+
+function showPopup(message, type = "error", onClose = null) {
+    popupIcon.textContent    = type === "success" ? "✅" : "❌";
+    popupMessage.textContent = message;
+    popupOverlay.classList.remove("hidden");
+
+    // Auto-close after 2 seconds, then run callback if provided
+    setTimeout(() => {
+        popupOverlay.classList.add("hidden");
+        if (onClose) onClose(); // e.g. redirect after success
+    }, 1500);
+}
+
+
+// ── 3. Password visibility toggles ────────────────────────────
 //    When the eye icon is clicked, switch input type between
 //    "password" (hidden) and "text" (visible)
 
 togglePwBtn.addEventListener("click", () => {
     const isHidden = passwordInput.type === "password";
     passwordInput.type = isHidden ? "text" : "password";
-    togglePwBtn.textContent = isHidden ? "🙈" : "👁️";
+    togglePwBtn.textContent = isHidden ? "🕶️" : "👁️";
 });
 
 toggleConfirmBtn.addEventListener("click", () => {
     const isHidden = confirmInput.type === "password";
     confirmInput.type = isHidden ? "text" : "password";
-    toggleConfirmBtn.textContent = isHidden ? "🙈" : "👁️";
+    toggleConfirmBtn.textContent = isHidden ? "🕶️" : "👁️";
 });
 
 
-// ── 3. Form submit ─────────────────────────────────────────────
+// ── 4. Form submit ─────────────────────────────────────────────
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault(); // Stop the page from reloading on submit
@@ -42,40 +66,38 @@ form.addEventListener("submit", async (e) => {
     const confirmPassword = confirmInput.value;
 
 
-    // ── 4. Client-side validation ──────────────────────────────
+    // ── 5. Client-side validation ──────────────────────────────
     //    We check inputs BEFORE sending to the server.
     //    This gives instant feedback without a network request.
 
     if (!name) {
-        return alert("Name is required");
+        return showPopup("Name is required");
     }
 
     if (!isValidEmail(email)) {
-        return alert("Invalid email address");
+        return showPopup("Invalid email address");
     }
 
     if (!isValidPhone(phone)) {
-        return alert("Phone number must be exactly 10 digits");
+        return showPopup("Phone number must be exactly 10 digits");
     }
 
     if (password.length < 8) {
-        return alert("Password must be at least 8 characters");
+        return showPopup("Password must be at least 8 characters");
     }
 
     if (password !== confirmPassword) {
-        return alert("Passwords do not match");
+        return showPopup("Passwords do not match");
     }
 
 
-    // ── 5. Send data to the backend ────────────────────────────
+    // ── 6. Send data to the backend ────────────────────────────
     //    fetch() sends an HTTP POST request to your Express server.
     //    We send JSON because our backend uses express.json() middleware.
     //
-    //    ⚠️  IMPORTANT: Change the BASE_URL below to match your
-    //    backend port. In development this is usually localhost:5000
-    //    or localhost:3000. In production, use your deployed URL.
+    //    ⚠️  Change BASE_URL to match your backend port.
 
-    const BASE_URL = "http://localhost:5000"; // <-- change this if your port is different
+    const BASE_URL = "http://localhost:5000"; // <-- change if your port is different
 
     try {
         const response = await fetch(`${BASE_URL}/api/auth/register`, {
@@ -94,25 +116,27 @@ form.addEventListener("submit", async (e) => {
         // response.ok is true for status codes 200–299
         if (!response.ok) {
             // Server returned an error (e.g. "User already exists")
-            return alert(data.message || "Registration failed");
+            return showPopup(data.message || "Registration failed");
         }
 
-        // ── Success ──────────────────────────────────────────────
-        // alert("Registration successful! Please log in.");
-        window.location.href = "../auth/A01 student login.html";
+        // ── Success ───────────────────────────────────────────
+        // Show success popup, then redirect after user clicks OK
+        showPopup("Registration successful! Redirecting...", "success", () => {
+            window.location.href = "../landing/H01 main.html";
+        });
 
     } catch (error) {
         // This catch block runs if:
         //   - The server is not running
         //   - The URL is wrong
-        //   - There's a network/CORS issue
+        //   - There's a network / CORS issue
         console.error("Registration error:", error);
-        alert("Could not connect to the server ");
+        showPopup("Could not connect to the server. Make sure your backend is running.");
     }
 });
 
 
-// ── 6. Helper / Utility functions ─────────────────────────────
+// ── 7. Helper / Utility functions ─────────────────────────────
 
 // Checks basic email format: something@something.something
 function isValidEmail(email) {

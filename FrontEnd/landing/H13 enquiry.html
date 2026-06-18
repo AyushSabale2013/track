@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Form — Track Academy</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ── Tokens ── */
+        :root {
+            --navy:      #232947;
+            --navy-deep: #181d35;
+            --navy-mid:  #2e3561;
+            --accent:    #5b7fff;
+            --accent-2:  #a78bfa;
+            --surface:   #ffffff;
+            --bg:        #f4f6fb;
+            --muted:     #6b7280;
+            --border:    #e5e7eb;
+            --text:      #111827;
+            --error:     #ef4444;
+            --success:   #16a34a;
+
+            --font-display: 'Syne', sans-serif;
+            --font-body:    'Inter', sans-serif;
+            --radius:       14px;
+            --radius-pill:  999px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Page wrapper ── */
+        .inquiry-page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        /* ══════════════════════════════
+           LEFT PANEL
+        ══════════════════════════════ */
+        .inq-left {
+            background: var(--navy);
+            padding: 64px 5vw 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ambient orbs */
+        .inq-left::before {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(91,127,255,0.18) 0%, transparent 70%);
+            bottom: -160px; right: -120px;
+            pointer-events: none;
+        }
+        .inq-left::after {
+            content: '';
+            position: absolute;
+            width: 320px; height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167,139,250,0.12) 0%, transparent 70%);
+            top: -80px; left: -60px;
+            pointer-events: none;
+        }
+
+        .inq-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative; z-index: 1;
+        }
+
+        .inq-brand img {
+            height: 40px; width: auto; object-fit: contain;
+        }
+
+        .inq-brand-name {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.02em;
+        }
+
+        .inq-left-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3rem 0 2rem;
+            position: relative; z-index: 1;
+        }
+
+        .inq-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .inq-eyebrow::before {
+            content: '';
+            width: 20px; height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .inq-headline {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .inq-headline .ha {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .inq-subtext {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+            max-width: 340px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* info pills */
+        .inq-info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .inq-info-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .inq-info-list li .ii-icon {
+            width: 36px; height: 36px;
+            background: rgba(91,127,255,0.15);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        /* left footer */
+        .inq-left-footer {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative; z-index: 1;
+        }
+
+        .inq-stat { display: flex; flex-direction: column; gap: 2px; }
+
+        .inq-stat-num {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .inq-stat-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .inq-divider-v {
+            width: 1px; height: 36px;
+            background: rgba(255,255,255,0.12);
+        }
+
+        /* ══════════════════════════════
+           RIGHT PANEL
+        ══════════════════════════════ */
+        .inq-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 5vw;
+            background: var(--bg);
+        }
+
+        .inq-form-card {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .inq-form-title {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 0.35rem;
+        }
+
+        .inq-form-sub {
+            font-size: 0.88rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* form message banner */
+        .form-message {
+            display: none;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+        .form-message.error   { background:#fef2f2; border:1px solid #fecaca; color:var(--error); }
+        .form-message.success { background:#f0fdf4; border:1px solid #bbf7d0; color:var(--success); }
+
+        /* two-col row */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* field */
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .field label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+        }
+
+        .field label span { color: var(--error); margin-left: 2px; }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            padding: 0.72rem 0.95rem;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--surface);
+            transition: border-color 0.15s, box-shadow 0.15s;
+            outline: none;
+            appearance: none;
+        }
+
+        .field input::placeholder,
+        .field textarea::placeholder { color: #9ca3af; }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(91,127,255,0.12);
+        }
+
+        .field input.invalid,
+        .field select.invalid,
+        .field textarea.invalid {
+            border-color: var(--error);
+            box-shadow: 0 0 0 3px rgba(239,68,68,0.1);
+        }
+
+        /* select arrow */
+        .select-wrap { position: relative; }
+        .select-wrap::after {
+            content: '';
+            position: absolute;
+            right: 14px; top: 50%;
+            transform: translateY(-50%);
+            width: 0; height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid var(--muted);
+            pointer-events: none;
+        }
+
+        .field textarea { resize: vertical; min-height: 100px; }
+
+        /* submit button */
+        .btn-submit {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--navy);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-pill);
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.03em;
+            transition: background 0.18s, transform 0.12s, box-shadow 0.18s;
+            margin-top: 0.25rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--navy-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(35,41,71,0.25);
+        }
+
+        .btn-submit:active { transform: scale(0.99); }
+        .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; }
+
+        .loader {
+            width: 18px; height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .form-footer-note {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ── Success Popup ── */
+        .success-popup {
+            position: fixed; inset: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.45);
+            z-index: 9999;
+            backdrop-filter: blur(4px);
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 44px 40px;
+            width: 400px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+            animation: popScale 0.3s cubic-bezier(0.175,0.885,0.32,1.275);
+        }
+
+        .popup-icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
+        .popup-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-content p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-close {
+            padding: 10px 28px;
+            background: var(--navy);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-pill);
+            font-family: var(--font-display);
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .popup-close:hover { background: var(--navy-deep); }
+
+        @keyframes popScale {
+            from { transform: scale(0.85); opacity: 0; }
+            to   { transform: scale(1);    opacity: 1; }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .inquiry-page { grid-template-columns: 1fr; }
+            .inq-left {
+                padding: 48px 5vw 40px;
+                min-height: auto;
+            }
+            .inq-left-body { padding: 2rem 0 1.5rem; }
+            .inq-headline { font-size: 2rem; }
+        }
+
+        @media (max-width: 520px) {
+            .form-row { grid-template-columns: 1fr; }
+            .inq-right { padding: 40px 5vw 56px; }
+            .popup-content { width: calc(100vw - 40px); padding: 32px 24px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader { animation: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div class="inquiry-page">
+
+        <!-- ══ LEFT PANEL ══ -->
+        <div class="inq-left">
+            <div class="inq-brand">
+                <img src="../assets/images/navLogo.png" alt="Track Academy">
+                <span class="inq-brand-name">Track Academy</span>
+            </div>
+
+            <div class="inq-left-body">
+                <p class="inq-eyebrow">Admissions Open</p>
+                <h1 class="inq-headline">
+                    Take the<br>
+                    <span class="ha">first step.</span>
+                </h1>
+                <p class="inq-subtext">
+                    Drop us your details and our team will reach out with course guidance, fee details,
+                    and everything you need to get started.
+                </p>
+                <ul class="inq-info-list">
+                    <li>
+                        <span class="ii-icon"><i class="fa-solid fa-bolt"></i></span>
+                        Response within 24 hours
+                    </li>
+                    <li>
+                        <span class="ii-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                        Your data is safe with us
+                    </li>
+                    <li>
+                        <span class="ii-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        JEE · NEET · NDA · CET coaching
+                    </li>
+                    <li>
+                        <span class="ii-icon"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                        Scholarship options available
+                    </li>
+                </ul>
+            </div>
+
+            <div class="inq-left-footer">
+                <div class="inq-stat">
+                    <span class="inq-stat-num">2,400+</span>
+                    <span class="inq-stat-label">Students</span>
+                </div>
+                <div class="inq-divider-v"></div>
+                <div class="inq-stat">
+                    <span class="inq-stat-num">98%</span>
+                    <span class="inq-stat-label">Pass Rate</span>
+                </div>
+                <div class="inq-divider-v"></div>
+                <div class="inq-stat">
+                    <span class="inq-stat-num">9 Yrs</span>
+                    <span class="inq-stat-label">Est. 2018</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ RIGHT PANEL ══ -->
+        <div class="inq-right">
+            <div class="inq-form-card">
+                <h2 class="inq-form-title">Enquiry Form</h2>
+                <p class="inq-form-sub">Fill in your details and we'll get back to you shortly.</p>
+
+                <!-- Inline message — replaces alert() -->
+                <div class="form-message" id="formMessage"></div>
+
+                <form id="inquiryForm">
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="name">Full Name <span>*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="10-digit number" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" id="email" name="email" placeholder="you@email.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="course">Course Interested <span>*</span></label>
+                        <div class="select-wrap">
+                            <select id="course" name="course" required>
+                                <option value="">Select a course</option>
+                                <option value="jee">JEE</option>
+                                <option value="neet">NEET</option>
+                                <option value="nda">NDA</option>
+                                <option value="cet">CET</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Any specific queries or details?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        Submit Enquiry <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <p class="form-footer-note">
+                    By submitting this form you agree to be contacted by our admissions team.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Success Popup -->
+    <div class="success-popup" id="successPopup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h2>Enquiry Submitted!</h2>
+            <p>Thanks for reaching out. Our team will contact you within 24 hours with all the details you need.</p>
+            <button class="popup-close" id="popupClose">Done</button>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/loadComponents.js"></script>
+
+    <script>
+        // ── Helpers ──────────────────────────────────────────
+        function showMsg(text, type = "error") {
+            const el = document.getElementById("formMessage");
+            el.textContent = text;
+            el.className = "form-message " + type;
+            el.style.display = "block";
+            el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+
+        function hideMsg() {
+            const el = document.getElementById("formMessage");
+            el.style.display = "none";
+            el.className = "form-message";
+        }
+
+        function setLoading(on) {
+            const btn = document.getElementById("submitBtn");
+            btn.disabled = on;
+            btn.innerHTML = on
+                ? '<span class="loader"></span> Sending…'
+                : 'Submit Enquiry <i class="fa-solid fa-arrow-right"></i>';
+        }
+
+        // ── Remove invalid on input ───────────────────────────
+        ["name", "phone", "email", "course"].forEach(id => {
+            document.getElementById(id).addEventListener("input", function () {
+                this.classList.remove("invalid");
+                hideMsg();
+            });
+        });
+
+        // ── Form Submit ───────────────────────────────────────
+        document.getElementById("inquiryForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            hideMsg();
+
+            const name    = document.getElementById("name").value.trim();
+            const phone   = document.getElementById("phone").value.trim();
+            const email   = document.getElementById("email").value.trim();
+            const course  = document.getElementById("course").value;
+            const message = document.getElementById("message").value.trim();
+
+            // Validation
+            if (!name) {
+                document.getElementById("name").classList.add("invalid");
+                return showMsg("Full name is required.");
+            }
+            if (!phone || !/^\d{10}$/.test(phone)) {
+                document.getElementById("phone").classList.add("invalid");
+                return showMsg("Enter a valid 10-digit phone number.");
+            }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById("email").classList.add("invalid");
+                return showMsg("Enter a valid email address.");
+            }
+            if (!course) {
+                document.getElementById("course").classList.add("invalid");
+                return showMsg("Please select a course.");
+            }
+
+            setLoading(true);
+
+            try {
+                const response = await fetch("http://localhost:5000/api/inquiry", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, phone, email, course, message }),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    showMsg(data.message || "Submission failed. Please try again.");
+                    setLoading(false);
+                    return;
+                }
+
+                // Success
+                document.getElementById("successPopup").style.display = "flex";
+                document.getElementById("inquiryForm").reset();
+
+            } catch (err) {
+                console.error(err);
+                showMsg("Could not connect to the server. Please try again.");
+            }
+
+            setLoading(false);
+        });
+
+        // ── Close popup ───────────────────────────────────────
+        document.getElementById("popupClose").addEventListener("click", () => {
+            document.getElementById("successPopup").style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
+

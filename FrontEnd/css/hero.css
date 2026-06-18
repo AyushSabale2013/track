@@ -1,0 +1,17 @@
+/* Hero Section */
+.hero_section_1 {
+    height: 500px;
+    width: auto;
+    background-image: url("../assets/images/products01.png");
+    background-size: cover;
+}
+
+.hero_section_2 {
+    margin-top: 50px;
+    margin-bottom: 0%;
+    height: 500px;
+    width: auto;
+    background-image: url("../assets/images/products01.png");
+    background-size: cover;
+}
+

@@ -1,108 +1,122 @@
 // ─────────────────────────────────────────────
-// AUTH.JS — Student / Teacher / Admin  Login
+// AUTH.JS — Student / Teacher / Admin Login
 // ─────────────────────────────────────────────
 
-// ── 1. Grab Elements ─────────────────────────
+const BASE_URL_AUTH = "http://localhost:5000";
 
-const form = document.getElementById("loginForm");
+window.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("loginForm");
+    const loginBtn = document.getElementById("loginBtn");
+
+    // ── Toggle Password Visibility ───────────
+    const togglePw = document.getElementById("togglePw");
+    const pw = document.getElementById("password");
+
+    togglePw.addEventListener("click", () => {
+        if (pw.type === "password") {
+            pw.type = "text";
+            togglePw.textContent = "🕶️";
+        } else {
+            pw.type = "password";
+            togglePw.textContent = "👁️";
+        }
+    });
+
+    // ── Submit ────────────────────────────────
+    loginBtn.addEventListener("click", () => {
+        handleLogin();
+    });
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        handleLogin();
+    });
+
+});
 
 
-// ── 2. Submit Form ───────────────────────────
+// ── Show / Hide inline message ────────────────
+// type: "error" | "success"
+function showMessage(text, type = "error") {
+    const banner = document.getElementById("formMessage");
+    banner.textContent = text;
+    banner.className = "form-message " + type;  // swap class for colour
+    banner.style.display = "block";
+}
 
-form.addEventListener("submit", async (e) => {
+function hideMessage() {
+    const banner = document.getElementById("formMessage");
+    banner.style.display = "none";
+    banner.textContent = "";
+    banner.className = "form-message";
+}
 
-    e.preventDefault();
 
-    const username =
-        document.getElementById("username")
-            .value
-            .trim();
+// ── Main Login Function ───────────────────────
+async function handleLogin() {
 
-    const password =
-        document.getElementById("password")
-            .value;
+    hideMessage();
 
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
     // ── Validation ───────────────────────────
-
-    if (!username) {
-        return alert("Email is required");
+    if (!email) {
+        return showMessage("Email is required.");
     }
 
     if (!password) {
-        return alert("Password is required");
+        return showMessage("Password is required.");
     }
 
-
     // ── Backend Request ──────────────────────
-
-    const BASE_URL = "http://localhost:5000";
-
     try {
 
-        const response = await fetch(
-            `${BASE_URL}/api/auth/login`,
-            {
-                method: "POST",
-
-                headers: {
-                    "Content-Type":
-                        "application/json",
-                },
-
-                credentials: "include",
-
-                body: JSON.stringify({
-                    email: username,
-                    password,
-                }),
-            }
-        );
+        const response = await fetch(`${BASE_URL_AUTH}/api/auth/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ email, password }),
+        });
 
         const data = await response.json();
 
-
         // ── Login Failed ──────────────────────
-
         if (!response.ok) {
-            return alert(
-                data.message ||
-                "Login failed"
-            );
+            return showMessage(data.message || "Invalid email or password.");
         }
-
 
         // ── Login Success ─────────────────────
+        showMessage("Login successful! Redirecting…", "success");
 
+        const popup = document.getElementById("loginSuccessPopup");
+        popup.style.display = "flex";
 
-        switch (data.role) {
+        setTimeout(() => {
 
-            case "admin":
-                window.location.href =
-                    "../admin/A01 home.html";
-                break;
+            switch (data.role) {
 
-            case "teacher":
-                window.location.href =
-                    "../teacher/T01 home.html";
-                break;
+                case "admin":
+                    window.location.href = "../admin/A01 home.html";
+                    break;
 
-            case "student":
-                window.location.href =
-                    "../student/S01 home.html";
-                break;
+                case "teacher":
+                    window.location.href = "../teacher/T01 home.html";
+                    break;
 
-            default:
-                alert("Unknown role");
-        }
+                case "student":
+                    window.location.href = "../student/S01 home.html";
+                    break;
+
+                default:
+                    showMessage("Unknown role: " + data.role);
+            }
+
+        }, 1500);
 
     } catch (error) {
-
         console.error(error);
-
-        alert(
-            "Could not connect to the server"
-        );
+        showMessage("Could not connect to the server. Try again.");
     }
-
-});
+}
