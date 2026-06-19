@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+
+/* ── Hero Section 1 — Welcome Banner ───────────────────────── */
+
+.hero_section_1 {
+    height: auto;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 30px 20px;
+}
+
+.welcome-banner {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f5faff, #e3f2fd);
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    color: #2b3a55;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-banner h1 {
+    font-size: 32px;
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+.welcome-line {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.welcome-points p {
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.tagline {
+    font-size: 16px;
+    font-style: italic;
+    color: #00796b;
+    margin-top: 25px;
+}
+
+.team-sign {
+    font-weight: bold;
+    color: #1a237e;
+    margin-top: 10px;
+}
+
+
+/* ── Main Content — Feature Grid ───────────────────────────── */
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-image:
+        url("https://www.transparenttextures.com/patterns/cubes.png"),
+        linear-gradient(to bottom right, #e0ecf7, #f9fbfd);
+    background-blend-mode: overlay;
+    background-size: contain;
+    padding: 40px 20px;
+}
+
+.feature-box {
+    width: 280px;
+    background-color: #fdfdfd;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature_image {
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #e3f2fd, #f5faff);
+}
+
+.feature-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+.change_anchor_decoration_black {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ── Hero Section 2 — Quote Banner ─────────────────────────── */
+
+.hero_section_2 {
+    margin-bottom: 0;
+    height: auto;
+    width: 100%;
+}
+
+.quote-section {
+    width: 100%;
+    height: 350px;
+    background: url('/S01 qoute.jpg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    animation: fadeIn 2.0s ease-in-out;
+}
+
+.quote-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.quote-overlay h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    animation: slideUp 1s ease-out;
+}
+
+.quote-overlay p {
+    font-size: 18px;
+    font-style: italic;
+    color: #ffeb3b;
+    animation: slideUp 1.3s ease-out;
+}
+
+
+/* ── Animations ─────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    .welcome-banner h1 { font-size: 24px; }
+    .feature-box { width: 100%; max-width: 320px; }
+    .quote-section { height: auto; padding: 20px 0; }
+}

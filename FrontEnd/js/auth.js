@@ -2,7 +2,7 @@
 // AUTH.JS — Student / Teacher / Admin Login
 // ─────────────────────────────────────────────
 
-const BASE_URL_AUTH = "http://localhost:5000";
+// const BASE_URL = "http://localhost:5000"; // already declared in load components 
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -63,7 +63,7 @@ async function handleLogin() {
 
     // ── Validation ───────────────────────────
     if (!email) {
-        return showMessage("Email is required.");
+        return showMessage("Correct Email is required.");
     }
 
     if (!password) {
@@ -73,7 +73,7 @@ async function handleLogin() {
     // ── Backend Request ──────────────────────
     try {
 
-        const response = await fetch(`${BASE_URL_AUTH}/api/auth/login`, {
+        const response = await fetch(`${BASE_URL}/api/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -88,12 +88,7 @@ async function handleLogin() {
         }
 
         // ── Login Success ─────────────────────
-        showMessage("Login successful! Redirecting…", "success");
-
-        const popup = document.getElementById("loginSuccessPopup");
-        popup.style.display = "flex";
-
-        setTimeout(() => {
+        showPopup("Login successful! Redirecting...", "success", () => {
 
             switch (data.role) {
 
@@ -112,8 +107,7 @@ async function handleLogin() {
                 default:
                     showMessage("Unknown role: " + data.role);
             }
-
-        }, 1500);
+        });
 
     } catch (error) {
         console.error(error);

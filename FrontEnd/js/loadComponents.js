@@ -57,20 +57,26 @@ async function updateNavbar() {
         const profileBtn = document.getElementById("profileBtn");
         const settingsBtn = document.getElementById("settingsBtn");
         const logoutBtn = document.getElementById("logoutBtn");
+        const productsBtn = document.getElementById("productsBtn");
+        const zoneBtn = document.getElementById("zoneBtn");
 
         if (data.success) {
 
             loginBtn.style.display = "none";
             registerBtn.style.display = "none";
+            zoneBtn.style.display = "none";
 
             profileBtn.style.display = "inline-flex";
             settingsBtn.style.display = "inline-flex";
             logoutBtn.style.display = "inline-flex";
+            productsBtn.style.display = "inline-flex";
 
         } else {
 
             loginBtn.style.display = "inline-flex";
             registerBtn.style.display = "inline-flex";
+            productsBtn.style.display = "inline-flex";
+            zoneBtn.style.display = "inline-flex";
 
             profileBtn.style.display = "none";
             settingsBtn.style.display = "none";
@@ -82,17 +88,22 @@ async function updateNavbar() {
     }
 }
 
-function showLogoutPopup(icon, message, onClose = null) {
-    // Remove existing popup if any
-    const existing = document.getElementById("logout-popup");
+function showPopup(message, type = "error", onClose = null) {
+    const existing = document.getElementById("popup-overlay");
     if (existing) existing.remove();
 
     const popup = document.createElement("div");
-    popup.id = "logout-popup";
+    popup.id = "popup-overlay";
+    popup.className = "popup-overlay";
     popup.innerHTML = `
-        <div class="logout-popup-box">
-            <span>${icon}</span>
-            <p>${message}</p>
+        <div class="popup-box">
+            <div class="popup-icon-wrap ${type}">
+                <span id="popup-icon">${type === "success" ? "✓" : "✕"}</span>
+            </div>
+            <p id="popup-message">${message}</p>
+            <div class="popup-progress">
+                <div class="popup-progress-fill ${type}"></div>
+            </div>
         </div>
     `;
     document.body.appendChild(popup);
@@ -119,65 +130,30 @@ function attachLogout() {
             const data = await res.json();
 
             if (res.ok) {
-                showLogoutPopup("👋", "Logged out successfully", () => {
+                showPopup("Logged out successfully", "success", () => {
                     window.location.href = "../landing/H01 main.html";
                 });
             } else {
-                showLogoutPopup("❌", data.message || "Logout failed");
+                showPopup(data.message || "Logout failed", "error");
             }
 
         } catch (err) {
             console.error("Logout error:", err);
-            showLogoutPopup("❌", "Could not connect to server");
+            showPopup("Could not connect to server", "error");
         }
     });
 }
 
-const style = document.createElement("style");
-style.textContent = `
-    #logout-popup {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.45);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-    }
-    .logout-popup-box {
-        background: #fff;
-        border-radius: 12px;
-        padding: 2rem 3rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        animation: popIn 0.25s ease;
-    }
-    .logout-popup-box span { font-size: 2.2rem; }
-    .logout-popup-box p {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #232947;
-        margin: 0;
-    }
-    @keyframes popIn {
-        from { transform: scale(0.85); opacity: 0; }
-        to   { transform: scale(1);    opacity: 1; }
-    }
-`;
-document.head.appendChild(style);
 
 (async () => {
     await Promise.all([
-        loadComponent('navbar', '/components/navbar.html'),
-        loadComponent('footer', '/components/footer.html'),
+        loadComponent('navbar', '../components/navbar.html'),
+        loadComponent('footer', '../components/footer.html'),
     ]);
-    await updateNavbar();  // check login status
+    await updateNavbar();  // check login status and updates nav bar accoridngly 
     initHamburger();       // wire up mobile menu
     attachLogout();
 })();
+
 
 

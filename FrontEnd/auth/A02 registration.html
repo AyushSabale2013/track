@@ -58,9 +58,8 @@
                 <p class="form-sub">Already have an account? <a href="../auth/A01 login.html" class="link">Sign
                         in</a></p>
 
-                <div id="error-banner" class="error-banner hidden">
-                    <span id="error-message"></span>
-                </div>
+                <!-- ── Inline Message Banner (replaces all alerts) ── -->
+                <div class="form-message" id="formMessage" style="display:none;"></div>
 
                 <form id="registerForm" novalidate>
 
@@ -141,18 +140,18 @@
 
     </div>
 
-    <!-- Popup Notification -->
+    <!-- Popup Notification
     <div id="popup" class="popup-overlay hidden">
         <div class="popup-box">
             <span id="popup-icon"></span>
             <p id="popup-message"></p>
         </div>
-    </div>
+    </div> -->
 
 
     <div id="footer"></div>
     <script src="../js/loadComponents.js"></script>
-    <script src="../js/register.js"></script>
+    <script type="module" src="../js/register.js"></script>
 
 </body>
 
